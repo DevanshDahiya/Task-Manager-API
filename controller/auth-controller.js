@@ -16,6 +16,7 @@ const registerUser = async(req, res) =>{
         const token = generateTokens(user._id) ;
 
         res.status(201).json({
+            success : true ,
             token , 
             user : {
                 id : user._id ,
@@ -53,10 +54,10 @@ const loginUser = async(req , res)=>{
                 message : "Invalid credentials" ,
             });
         }
-        const tokenGenerate = generateTokens(user._id) ;
+        const token = generateTokens(user._id) ;
         res.status(200).json({
             success : true ,
-            tokenGenerate , 
+            token , 
             user : {
                 id : user._id,
                 username : user.username ,
